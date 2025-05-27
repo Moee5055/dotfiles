@@ -144,6 +144,7 @@ alias gs='git status'
 alias gi='git init'
 alias ga='git add .'
 alias gc='git commit -m'
+alias glog='git log'
 
 #my alisa
 alias vi='nvim'
