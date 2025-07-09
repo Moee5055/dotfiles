@@ -3,3 +3,7 @@
 	email = kshitij.moee55@gmail.com
 [init]
 	defaultBranch = main
+[core]
+	editor = vim
+[pull]
+	rebase = true

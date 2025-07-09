@@ -1,0 +1,103 @@
+# Step 1: Create ~/.fdignore file
+# Create this file in your home directory with directories/patterns to exclude
+
+# Common cache and temporary directories
+.cache/
+cache/
+tmp/
+temp/
+.tmp/
+
+# Version control
+.git/
+.svn/
+.hg/
+
+# Build artifacts and dependencies
+node_modules/
+build/
+dist/
+target/
+out/
+bin/
+obj/
+
+# Python
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.tox/
+venv/
+.venv/
+env/
+.env/
+.coverage/
+htmlcov/
+
+# Package managers
+.npm/
+.yarn/
+.pnpm/
+vendor/
+.composer/
+.m2/
+.gradle/
+.cargo/registry/
+.rustup/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Browser data
+.mozilla/
+.config/google-chrome/
+.config/chromium/
+.thunderbird/
+
+# Steam and games
+.steam/
+.local/share/Steam/
+
+# System directories (if running from home)
+.local/share/Trash/
+snap/
+.snap/
+
+# Language specific
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+
+# Database
+.sqlite3
+*.db
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+#addition
+.nvm
+.vim
+.cursor
+.bun
+.fzf
+go/pkg
+Applications/Postman/

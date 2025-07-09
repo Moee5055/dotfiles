@@ -132,33 +132,44 @@ export PATH=$PATH:$HOME/go/bin
 
 #adding zen to path
 export PATH=$PATH:/home/kshitij/zen
+export PATH=$PATH:/home/kshitij/scripts
 
-#enabling vim keybindings
+#adding cursor to path
+export PATH=$PATH:/home/kshitij/cursor
+
+#adding alias for cursor
+alias cursor="cursor.AppImage --no-sandbox"
+
+#enabling vim keybindings in terminal
 set -o vi
 
-#cursor alias
-alias code='cursor --no-sandbox'
+#python alias
+alias py="python3"
 
 #git alias
 alias gs='git status'
 alias gi='git init'
-alias ga='git add .'
+alias ga='git add'
 alias gc='git commit -m'
-alias glog='git log'
+alias glog='git log --oneline'
+alias gb='git branch'
+alias gloggraph='git log --oneline --graph --all'
+alias glogparents='git log --oneline --decorate --parents'
+alias gcat='git cat-file -p'
+alias gsw='git switch'
 
 #my alisa
 alias vi='nvim'
-alias cls='clear'
 alias h='cd ~'
 alias ba='nvim ~/.bashrc'
 alias so="source ~/.bashrc"
-alias shutnow='shutdown now'
+alias off='shutdown now'
+alias reboot='shutdown now -r'
 alias hs="history | grep"
-alias bk="cd .."
 alias ls="lsd"
-
-#tmux alisa
-alias tmk="tmux kill-session -t"
+alias rundocker="systemctl --user start docker-desktop"
+alias pkg="~/scripts/package.sh"
+alias move="rsync -a --info=progress2"
 
 #fzf path
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -166,4 +177,24 @@ alias tmk="tmux kill-session -t"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-neofetch
+auto_tmux.sh
+
+#tmux alisa
+alias tmk="tmux kill-session -t"
+
+# FZF configuration using fd
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow'
+
+# Optional: Also configure FZF_DEFAULT_COMMAND for file search (Ctrl+T)
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+
+# Optional: Configure FZF_CTRL_T_COMMAND for file search
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow'
+
+# Optional: FZF options for better appearance
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# Optional: Preview window for directories (requires tree or ls)
+#export FZF_ALT_C_OPTS='--preview "tree -C {} | head -100"'
+export FZF_ALT_C_OPTS='--preview "tree -aC -I \"node_modules|.git|cache|.cache|build|dist|__pycache__|venv|.venv|.npm|.yarn|vendor|logs|tmp|.tmp|.pytest_cache|.mypy_cache|.tox|coverage|htmlcov|.coverage|target|.gradle|.m2|.cargo|.rustup|.local|snap|.mozilla|.config|.thunderbird|.steam\" {} | head -100"'
+
